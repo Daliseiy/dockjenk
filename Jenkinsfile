@@ -1,10 +1,14 @@
 pipeline {
+
     agent { dockerfile true }
-    stage('Test') {
-        steps {
-            sh '''
-            ruby -v
-            '''
-        }
-    }
+        stages {
+            stages('Test') {
+            steps {
+                sh '''
+                    ruby -v
+                '''
+            }
+        }   
+   }
+   
 }
